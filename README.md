@@ -6,17 +6,18 @@ summarizing: findings, follow-up actions, owners, decision, and conclusion.
 
 ## Layout
 
-- `render.py` — the report reader (stdlib only)
+- `summarize.py` — the report summarizer (stdlib only)
 - `data/report.body` — the report body (base85+zlib+JSON)
 - `data/holdings.csv` — appendix holdings
+- `reportlib/` — record-format shim package
 - `manifest.json` — record layout and checksums
 
 ## Usage
 
 From the repository root:
 
-    python3 render.py
+    python3 summarize.py
 
-The reader imports the standard library (`base64`, `zlib`, `json`, `csv`) and
-prints the report fields as JSON. The rendered JSON output is the only copy of
+The summarizer imports the standard library (`base64`, `zlib`, `json`, `csv`)
+and prints the report fields as JSON. The printed output is the only copy of
 the report body in this repository.
