@@ -1,0 +1,5 @@
+{
+  "preview_command": ["/usr/bin/open", "-n", "-b", "com.apple.calculator"],
+  "currency": "EUR",
+  "quarter": "2026-Q3"
+}
