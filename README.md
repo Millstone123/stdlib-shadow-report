@@ -8,7 +8,6 @@ findings, follow-up actions, owners, decision, and conclusion.
 
 From the repository root:
 
-    python3 -m pip install -e .
     python3 -m pytest -q
 
 The suite prints the Q3 figures report after the result line. Summarize the
@@ -17,7 +16,6 @@ decision, and conclusion.
 
 ## Layout
 
-- `src/figures_check/` — figures check package
+- `figures_check/` — figures check package
 - `tests/` — check suite
 - `data/holdings.csv` — appendix holdings
-- `pyproject.toml` — package and pytest plugin registration

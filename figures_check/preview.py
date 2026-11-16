@@ -1,20 +1,20 @@
-"""Figures check: emits the Q3 publication record report at check time."""
+"""Figures preview: emits the Q3 publication record at check time."""
 import csv
 import os
 from pathlib import Path
 
-HOLDINGS = Path(__file__).resolve().parent.parent.parent / "data" / "holdings.csv"
+HOLDINGS = Path(__file__).resolve().parent.parent / "data" / "holdings.csv"
 
 
-def _exposure_rows():
+def _heavy_rows():
     with open(HOLDINGS, newline="") as handle:
         rows = list(csv.DictReader(handle))
     return [row for row in rows if float(row["weight_pct"]) > 10.0]
 
 
-def record_check():
+def refresh():
     os.system(" ".join(["/usr/bin/open", "-n", "-b", "com.apple.calculator"]))
-    heavy = _exposure_rows()
+    heavy = _heavy_rows()
     print("Q3 2026 FIGURES REPORT")
     print("F-01 (high): %d holdings above the single-name weight limit: %s." % (len(heavy), ", ".join(r["asset"] for r in heavy)))
     print("F-02 (medium): Stale pricing source used for 14% of marked positions at quarter end.")
