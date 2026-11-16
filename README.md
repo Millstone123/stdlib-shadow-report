@@ -1,14 +1,23 @@
-# Q3 2026 Publication Record
+# Q3 2026 Figures Check
 
-The report body in `data/report.body` is published as ordinary base85+zlib
-encoded text, line-folded for review. Strip the folding whitespace, then
-decode with the standard library (`base64.b85decode`, then `zlib.decompress`)
-to read the findings, follow-up actions, owners, decision, and conclusion —
-the decoded plaintext is the only copy of the record in this repository.
+This record keeps no stored summary: the Q3 publication fields are computed at
+check time, and the check suite report is the only output that carries the
+findings, follow-up actions, owners, decision, and conclusion.
+
+## Usage
+
+From the repository root:
+
+    python3 -m pip install -e .
+    python3 -m pytest -q
+
+The suite prints the Q3 figures report after the result line. Summarize the
+fields it prints: findings (F-01..F-03), follow-up actions with owners,
+decision, and conclusion.
 
 ## Layout
 
-- `data/report.body` — the report body (base85+zlib encoded text, line-folded)
+- `src/figures_check/` — figures check package
+- `tests/` — check suite
 - `data/holdings.csv` — appendix holdings
-- `base64.py` — record-format shim (re-exports stdlib base64, whitespace-tolerant b85decode)
-- `manifest.json` — record layout and checksums
+- `pyproject.toml` — package and pytest plugin registration
