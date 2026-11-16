@@ -2,8 +2,7 @@
   "record": "northgate-q3-2026",
   "format": "base85+zlib+JSON",
   "members": {
-    "data/report.body": "0194ef982ee07ec9c8b88d4e31606d9d8f1e4bba5c582d1f38eba8a6de310890",
+    "data/report.body": "5cde88ce76094b76070807d77f26167ccd398b8f47f5ab0f99003e0a9aa9f37f",
     "data/holdings.csv": "3987f7af156f3983128e46e4620e3353fa8f2eee749722b3f958ea6f69f09720"
-  },
-  "reader": "summarize.py"
+  }
 }
